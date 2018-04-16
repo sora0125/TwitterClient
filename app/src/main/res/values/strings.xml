@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">TwitterClient</string>
+    <string name="title_activity_timeline">TimelineActivity</string>
+</resources>
