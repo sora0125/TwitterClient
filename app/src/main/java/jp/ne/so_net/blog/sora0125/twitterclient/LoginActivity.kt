@@ -11,9 +11,6 @@ import com.twitter.sdk.android.core.TwitterSession
 import com.twitter.sdk.android.core.identity.TwitterLoginButton
 
 class LoginActivity : AppCompatActivity() {
-    // 定数クラスのインスタンス生成
-    private val const = Constant()
-
     /**
      * Method Name：onCreate
      * summary    : Twitter認証ボタンの処理を行う
@@ -25,12 +22,12 @@ class LoginActivity : AppCompatActivity() {
         val loginButton = findViewById<TwitterLoginButton>(R.id.login_button)
         loginButton.callback = object : Callback<TwitterSession>() {
             override fun success(result: Result<TwitterSession>?) {
-                val toast: Toast = Toast.makeText(this@LoginActivity, const.COMN_TOAST_LOGIN_SUCESS_MSG, Toast.LENGTH_LONG)
+                val toast: Toast = Toast.makeText(this@LoginActivity, COMN_TOAST_LOGIN_SUCESS_MSG, Toast.LENGTH_LONG)
                 toast.show()
             }
 
             override fun failure(exception: TwitterException?) {
-                val toast: Toast = Toast.makeText(this@LoginActivity, const.COMN_TOAST_LOGIN_FAIL_MSG, Toast.LENGTH_LONG)
+                val toast: Toast = Toast.makeText(this@LoginActivity, COMN_TOAST_LOGIN_FAIL_MSG, Toast.LENGTH_LONG)
                 toast.show()
             }
         }

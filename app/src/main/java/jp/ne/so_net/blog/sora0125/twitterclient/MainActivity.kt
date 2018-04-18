@@ -7,9 +7,6 @@ import android.widget.Toast
 import com.twitter.sdk.android.core.TwitterCore
 
 class MainActivity : AppCompatActivity() {
-    // 定数クラスのインスタンス生成
-    private val const = Constant()
-
     /**
      * Method Name：onCreate
      * summary    : 初期処理を実行。セッションをチェックし、次画面に遷移させる。
@@ -23,7 +20,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, LoginActivity::class.java)
             startActivity(intent)
         } else {
-            val toast: Toast = Toast.makeText(this, const.COMN_TOAST_SES_YES_MSG, Toast.LENGTH_LONG)
+            val toast: Toast = Toast.makeText(this, COMN_TOAST_SES_YES_MSG, Toast.LENGTH_LONG)
             toast.show()
 
             // タイムライン画面へ遷移

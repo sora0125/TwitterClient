@@ -8,12 +8,9 @@ import com.twitter.sdk.android.core.TwitterAuthConfig
 import com.twitter.sdk.android.core.TwitterConfig
 
 class MyApplication : Application(){
-    // 定数クラスのインスタンス生成
-    private val const = Constant()
-
     // 開発者認証キー
-    private val CONSUMER_KEY = const.APP_MYAPP_CONSUMER_KEY
-    private val CONSUMER_SECRET = const.APP_MYAPP_CONSUMER_SECRET
+    private val CONSUMER_KEY = APP_MYAPP_CONSUMER_KEY
+    private val CONSUMER_SECRET = APP_MYAPP_CONSUMER_SECRET
 
     /**
      * Method Name：onCreate
