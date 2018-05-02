@@ -14,9 +14,9 @@ const val COMN_TOAST_TIMELINE_FAIL_MSG = "タイムライン取得エラー"
 
 // MyApplication
 /** 開発者カスタマーキー */
-const val APP_MYAPP_CONSUMER_KEY = "aaa"
-const val APP_MYAPP_CONSUMER_SECRET = "bbb"
+const val APP_MYAPP_CONSUMER_KEY = "aaaa"
+const val APP_MYAPP_CONSUMER_SECRET = "bbbb"
 
 // TimeLineActivity
 /** タイムライン取得数 */
-const val ACT_TIMELINE_GET_COUNT = 40
+const val ACT_TIMELINE_GET_COUNT =10
