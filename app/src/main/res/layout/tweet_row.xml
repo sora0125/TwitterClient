@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="36dp"
         android:text="ツイート本文"
-        android:autoLink="web"
+
         android:layout_toRightOf="@id/profile_icon"
         android:layout_toEndOf="@id/profile_icon"
         android:layout_below="@id/screen_name"/>

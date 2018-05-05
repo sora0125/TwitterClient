@@ -6,8 +6,6 @@ import android.support.design.widget.Snackbar
 import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
-import android.view.KeyEvent
-import android.view.View
 import android.widget.ListView
 import android.widget.Toast
 import com.twitter.sdk.android.core.*
@@ -29,7 +27,7 @@ class TimelineActivity : AppCompatActivity() {
     /**
      * Method Name：onCreate
      * summary    : アダプターをリストビューにセットし、タイムラインを表示する
-     **/
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_timeline)
@@ -42,7 +40,8 @@ class TimelineActivity : AppCompatActivity() {
                     .setAction("Action", null).show()
         }
 
-        my_list_view.setOnItemClickListener { parent, view, position, id ->
+        // リストのツイートタップ時の処理
+        my_list_view.setOnItemClickListener { _, _, position, _ ->
             val i: Intent = Intent(this,jp.ne.so_net.blog.sora0125.twitterclient.MainActivity::class.java)
             i.putExtra("tweetId", adapter.getItemId(position))
             startActivity(i)
@@ -111,9 +110,9 @@ class TimelineActivity : AppCompatActivity() {
     }
 
     /**
-     * Method Name：getFutureHomeTimeline
-     * summary    : 最新のタイムラインを取得する
-     **/
+     * Method Name : getFutureHomeTimeline
+     * summary     : 最新のタイムラインを取得する
+     */
     private fun getFutureHomeTimeline() {
 
         val twitterApiClient: TwitterApiClient = TwitterCore.getInstance().apiClient
