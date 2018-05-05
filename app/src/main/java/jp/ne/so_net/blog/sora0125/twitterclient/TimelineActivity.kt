@@ -1,10 +1,13 @@
 package jp.ne.so_net.blog.sora0125.twitterclient
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import android.view.KeyEvent
+import android.view.View
 import android.widget.ListView
 import android.widget.Toast
 import com.twitter.sdk.android.core.*
@@ -19,9 +22,9 @@ class TimelineActivity : AppCompatActivity() {
     private lateinit var adapter: TweetAdapter
     private  var tweetList: MutableList<Tweet> = mutableListOf()
     private lateinit var mSwipeRefreshLayout: SwipeRefreshLayout
-    var sinceId: Long? = null
-    var maxId: Long? = null
-    var updateCnt: Int = 1
+    private var sinceId: Long? = null
+    private var maxId: Long? = null
+    private var updateCnt: Int = 1
 
     /**
      * Method Name：onCreate
@@ -39,6 +42,12 @@ class TimelineActivity : AppCompatActivity() {
                     .setAction("Action", null).show()
         }
 
+        my_list_view.setOnItemClickListener { parent, view, position, id ->
+            val i: Intent = Intent(this,jp.ne.so_net.blog.sora0125.twitterclient.MainActivity::class.java)
+            i.putExtra("tweetId", adapter.getItemId(position))
+            startActivity(i)
+        }
+
         // SwipeRefreshLayoutの設定
         mSwipeRefreshLayout = findViewById(R.id.refresh)
         // 下方向へスワイプした時の処理
@@ -52,13 +61,21 @@ class TimelineActivity : AppCompatActivity() {
         adapter = TweetAdapter(this, tweetList)
         listView.adapter = adapter
         getHomeTimeline()
+    }
 
+    /**
+     * Method Name：onBackPressed
+     * summary    : バックキータップ時にアプリを終了
+     */
+    override fun onBackPressed() {
+        super.onBackPressed()
+        moveTaskToBack(true)
     }
 
     /**
      * Method Name：getHomeTimeline
      * summary    : 現在・過去のタイムラインを取得する
-     **/
+     */
     private fun getHomeTimeline() {
 
         val twitterApiClient: TwitterApiClient = TwitterCore.getInstance().apiClient

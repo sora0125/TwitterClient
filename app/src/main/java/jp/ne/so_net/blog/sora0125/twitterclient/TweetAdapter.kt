@@ -16,7 +16,7 @@ class TweetAdapter(private val context: Context, private val tweetList: List<Twe
     /**
      * Method Name : getCount
      * summary     : ツイートの取得数を取得
-     **/
+     */
     override fun getCount(): Int {
         return tweetList.size
     }
@@ -24,7 +24,7 @@ class TweetAdapter(private val context: Context, private val tweetList: List<Twe
     /**
      * Method Name : getItem
      * summary     : アイテムを取得
-     **/
+     */
     override fun getItem(position: Int): Any {
         return tweetList[position]
     }
@@ -32,7 +32,7 @@ class TweetAdapter(private val context: Context, private val tweetList: List<Twe
     /**
      * Method Name : getItemId
      * summary     : IDを取得
-     **/
+     */
     override fun getItemId(position: Int): Long {
         return tweetList[position].getId()
     }
@@ -40,7 +40,7 @@ class TweetAdapter(private val context: Context, private val tweetList: List<Twe
     /**
      * Class Name : ViewHolder
      * summary    : データクラス
-     **/
+     */
     class ViewHolder {
         var profileIconImgView: ImageView? = null
         var screenNameTextView: TextView? = null
@@ -54,7 +54,7 @@ class TweetAdapter(private val context: Context, private val tweetList: List<Twe
      * @param     : convertView
      * @param     : parent
      * @return    : convertView
-     **/
+     */
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View? {
         // ViewHolder Pattern
         var v = convertView

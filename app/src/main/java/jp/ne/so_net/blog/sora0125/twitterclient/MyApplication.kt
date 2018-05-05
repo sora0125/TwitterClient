@@ -13,9 +13,9 @@ class MyApplication : Application(){
     private val CONSUMER_SECRET = APP_MYAPP_CONSUMER_SECRET
 
     /**
-     * Method Name：onCreate
-     * summary    : Twitter Kitの初期化を行う
-     **/
+     * Method Name : onCreate
+     * summary     : Twitter Kitの初期化を行う
+     */
     override fun onCreate() {
         super.onCreate()
 
